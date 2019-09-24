@@ -7,7 +7,7 @@ const {
 
 const scale = SCREEN_WIDTH / 320
 
-export const actuatedNormalize = (size) => {
+export const sizeNormalize = (size) => {
   const newSize = size * scale
   if (Platform.OS === 'ios')
     return Math.round(PixelRatio.roundToNearestPixel(newSize))

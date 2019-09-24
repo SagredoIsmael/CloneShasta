@@ -1,15 +1,15 @@
 import { connect } from 'react-redux'
-import { setNumberFromDisplay } from '../../actions/display'
+import { checkNumberDisplay } from '../../actions/display'
 import numberDisplay from '../../../components/display/numberDisplay'
 
 const mapStateToProps = state => {
-  return {test:state}
+  return { }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    setNumberFromDisplay: () => {
-      dispatch(setNumberFromDisplay())
+    checkNumberDisplay: (number) => {
+      dispatch(checkNumberDisplay(number))
     },
   }
 }

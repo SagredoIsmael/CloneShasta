@@ -29,10 +29,10 @@ const Display = () => (
           <Wrapper backgroundColor="white"/>
         </Col>
       </Row>
-      <Row size={24}>
+      <Row size={34}>
         <Wrapper backgroundColor="white"/>
       </Row>
-      <Row size={46}>
+      <Row size={40}>
         <Col size={1}>
           <Row size={1}>
             <DisplayNumber number="1" borderRight/>
@@ -55,7 +55,7 @@ const Display = () => (
           <DisplayNumber number="5"/>
         </Row>
         <Row size={1}>
-          <DisplayNumber number="8"/> 
+          <DisplayNumber number="8"/>
         </Row>
         <Row size={1}>
           <DisplayNumber number="0"/>
@@ -76,7 +76,7 @@ const Display = () => (
         </Row>
         </Col>
       </Row>
-      <Row size={10}>
+      <Row size={16}>
         <Wrapper backgroundColor="grey"/>
       </Row>
     </Grid>

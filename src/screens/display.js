@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Constants from '../utils/constants'
 import { Col, Row, Grid } from "react-native-easy-grid"
 import DisplayNumber from '../redux/containers/display/numberDisplay'
+import OutputDisplay from '../redux/containers/display/outputDisplay'
 
 const Wrapper = styled.View`
   flex: 1;
@@ -30,7 +31,7 @@ const Display = () => (
         </Col>
       </Row>
       <Row size={34}>
-        <Wrapper backgroundColor="white"/>
+        <OutputDisplay/>
       </Row>
       <Row size={40}>
         <Col size={1}>

@@ -1,4 +1,4 @@
-import { SET_NUMBER_DISPLAY, DELETE_NUMBER_DISPLAY, FULL_NUMBER_DISPLAY } from '../actions/types'
+import { SET_NUMBER_DISPLAY, DELETE_NUMBER_DISPLAY, FULL_NUMBER_DISPLAY, EMPTY_NUMBER_DISPLAY, ACTIVE_DECIMAL_NUMBER_DISPLAY } from '../actions/types'
 
 
 const initialState = {
@@ -18,6 +18,12 @@ export default (state = initialState, action) => {
 
     case FULL_NUMBER_DISPLAY:
       return state
+
+    case ACTIVE_DECIMAL_NUMBER_DISPLAY:
+      return state
+
+    case EMPTY_NUMBER_DISPLAY:
+      return {...state, markerNumber: 0}
 
     default:
       return state

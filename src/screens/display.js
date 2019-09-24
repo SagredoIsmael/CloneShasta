@@ -1,14 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import Constants from '../utils/constants'
-import { Col, Row, Grid } from "react-native-easy-grid";
+import { Col, Row, Grid } from "react-native-easy-grid"
 import DisplayNumber from '../redux/containers/display/numberDisplay'
 
 const Wrapper = styled.View`
   flex: 1;
-  background-color: ${props => props.backgroundColor};
-  justify-content: center;
-  align-items: center;
+  background-color: ${Constants.primaryColor};
 `
 
 const ButtonText = styled.Text`
@@ -18,69 +16,71 @@ const ButtonText = styled.Text`
 `;
 
 const Display = () => (
-  <Grid>
-    <Row size={10}>
-      <Col size={25}>
+  <Wrapper>
+    <Grid>
+      <Row size={10}>
+        <Col size={25}>
+          <Wrapper backgroundColor="grey"/>
+        </Col>
+        <Col size={50}>
+          <Wrapper backgroundColor="grey"/>
+        </Col>
+        <Col size={25}>
+          <Wrapper backgroundColor="white"/>
+        </Col>
+      </Row>
+      <Row size={24}>
         <Wrapper backgroundColor="white"/>
-      </Col>
-      <Col size={50}>
+      </Row>
+      <Row size={46}>
+        <Col size={1}>
+          <Row size={1}>
+            <DisplayNumber number="1" borderRight/>
+          </Row>
+          <Row size={1}>
+            <DisplayNumber number="4" borderRight/>
+          </Row>
+          <Row size={1}>
+            <DisplayNumber number="7" borderRight/>
+          </Row>
+          <Row size={1}>
+            <DisplayNumber number="," borderRight/>
+          </Row>
+        </Col>
+        <Col size={1}>
+        <Row size={1}>
+          <DisplayNumber number="2"/>
+        </Row>
+        <Row size={1}>
+          <DisplayNumber number="5"/>
+        </Row>
+        <Row size={1}>
+          <DisplayNumber number="8"/> 
+        </Row>
+        <Row size={1}>
+          <DisplayNumber number="0"/>
+        </Row>
+        </Col>
+        <Col size={1}>
+        <Row size={1}>
+          <DisplayNumber number="3" borderLeft/>
+        </Row>
+        <Row size={1}>
+          <DisplayNumber number="6" borderLeft/>
+        </Row>
+        <Row size={1}>
+          <DisplayNumber number="9" borderLeft/>
+        </Row>
+        <Row size={1}>
+          <DisplayNumber number="<" borderLeft/>
+        </Row>
+        </Col>
+      </Row>
+      <Row size={10}>
         <Wrapper backgroundColor="grey"/>
-      </Col>
-      <Col size={25}>
-        <Wrapper backgroundColor="white"/>
-      </Col>
-    </Row>
-    <Row size={32}>
-      <Wrapper backgroundColor="white"/>
-    </Row>
-    <Row size={38}>
-      <Col size={1}>
-        <Row size={1}>
-          <Wrapper backgroundColor="green"/>
-        </Row>
-        <Row size={1}>
-          <Wrapper backgroundColor="red"/>
-        </Row>
-        <Row size={1}>
-          <Wrapper backgroundColor="blue"/>
-        </Row>
-        <Row size={1}>
-          <Wrapper backgroundColor="yellow"/>
-        </Row>
-      </Col>
-      <Col size={1}>
-      <Row size={1}>
-        <Wrapper backgroundColor="yellow"/>
       </Row>
-      <Row size={1}>
-        <Wrapper backgroundColor="red"/>
-      </Row>
-      <Row size={1}>
-        <Wrapper backgroundColor="blue"/>
-      </Row>
-      <Row size={1}>
-        <Wrapper backgroundColor="green"/>
-      </Row>
-      </Col>
-      <Col size={1}>
-      <Row size={1}>
-        <Wrapper backgroundColor="green"/>
-      </Row>
-      <Row size={1}>
-        <Wrapper backgroundColor="yellow"/>
-      </Row>
-      <Row size={1}>
-        <Wrapper backgroundColor="blue"/>
-      </Row>
-      <Row size={1}>
-        <Wrapper backgroundColor="green"/>
-      </Row>
-      </Col>
-    </Row>
-    <Row size={10}>
-      <Wrapper backgroundColor="grey"/>
-    </Row>
-  </Grid>
+    </Grid>
+  </Wrapper>
 )
 
 export default Display

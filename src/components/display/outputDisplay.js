@@ -7,47 +7,33 @@ import { Col, Row, Grid } from "react-native-easy-grid"
 
 const Wrapper = styled.View`
   display: flex;
+  flex:1;
   flexDirection: row;
   alignSelf: center;
+  alignItems: center;
 `
 
-const NumberWrapper = styled.View`
+const DefaultWrapper = styled.View`
   display: flex;
-  alignItems: center;
 `
 
 const Number = styled.Text`
   display: flex;
-  font-size: ${sizeNormalize(100)};
-  color: ${Constants.numberColor};
-`
-
-const DecimalWrapper = styled.View`
-  display: flex;
-  alignItems: flex-start;
-`
-
-const Decimal = styled.Text`
-  display: flex;
-  justifyContent: flex-start;
-  font-size: ${sizeNormalize(40)};
-  color: ${Constants.euroIconColor};
-`
-
-const EuroWrapper = styled.View`
-  display: flex;
-  alignItems: flex-end;
+  font-size: ${props => props.sizeFontNumber ? sizeNormalize(props.sizeFontNumber) : sizeNormalize(40) };
+  color: ${props => props.color};
 `
 
 const Euro = styled.Text`
   display: flex;
   textAlign: right;
   fontWeight: bold;
-  font-size: ${sizeNormalize(60)};
+  font-size: ${props => props.sizeFontNumber ? sizeNormalize(props.sizeFontNumber) : sizeNormalize(40) };
   color: ${Constants.euroIconColor};
 `
 
-export const NumberDisplay = ({numbersOutput, numbersDecimal}) => {
+export const NumberDisplay = ({numbersOutput, numbersDecimal, sizeFontNumber}) => {
+  const number = parseInt(numbersOutput.toString().replace(/\./g,''),10).toLocaleString("de-DE")
+
   return (
     <Grid>
       <Row size={20}/>
@@ -55,29 +41,29 @@ export const NumberDisplay = ({numbersOutput, numbersDecimal}) => {
         <Col size={10}/>
         <Col size={75}>
           <Wrapper>
-            <EuroWrapper>
+            <DefaultWrapper>
               <Row size={10}/>
               <Row size={70}>
-                <Euro>
+                <Euro sizeFontNumber={sizeFontNumber*0.6} >
                   €
                 </Euro>
               </Row>
               <Row size={20}/>
-            </EuroWrapper>
-            <NumberWrapper>
-              <Number numberOfLines={1} ellipsizeMode="clip">
-                {numbersOutput}
+            </DefaultWrapper>
+            <DefaultWrapper>
+              <Number sizeFontNumber={sizeFontNumber} numberOfLines={1} ellipsizeMode="clip" color={Constants.numberColor}>
+                {number}
               </Number>
-            </NumberWrapper>
-            <DecimalWrapper>
+            </DefaultWrapper>
+            <DefaultWrapper>
               <Row size={15}/>
               <Row size={65}>
-                <Decimal numberOfLines={1}>
+                <Number sizeFontNumber={sizeFontNumber*0.4} numberOfLines={1} ellipsizeMode="clip" color={Constants.euroIconColor}>
                 {numbersDecimal}
-                </Decimal>
+                </Number>
               </Row>
               <Row size={20}/>
-            </DecimalWrapper>
+            </DefaultWrapper>
           </Wrapper>
         </Col>
         <Col size={15}/>

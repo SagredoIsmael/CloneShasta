@@ -82,7 +82,7 @@ export const checkNumberDisplay = (number) => (dispatch, getState) => {
         if (getState().display.isFirstDecimalActive)
           dispatch(setDecimalFromDisplay(number + '0'))
         else {
-          if (getState().display.markerNumber.toString().length > 9)
+          if (getState().display.markerNumber.toString().length > 6)
             dispatch(fullNumberFromDisplay())
           else
             dispatch(setNumberFromDisplay(number))

@@ -8,18 +8,21 @@ const initialState = {
   markerDecimal: '',
   isFirstDecimalActive: false,
   isSecondDecimalActive: false,
+  sizeFontNumber: 100,
 }
 
 export default (state = initialState, action) => {
   switch(action.type){
 
     case SET_NUMBER_DISPLAY:
-      const newNumber = state.markerNumber.toString() + action.payload
-      return {...state, markerNumber: parseInt(newNumber, 10)}
+      const newNumber = parseInt(state.markerNumber.toString() + action.payload)
+      
+      return {...state, markerNumber: newNumber, sizeFontNumber: state.sizeFontNumber - 7 }
 
     case DELETE_NUMBER_DISPLAY:
-      const newStr = state.markerNumber.toString().slice(0, state.markerNumber.toString().length-1);
-      return {...state, markerNumber: parseInt(newStr, 10)}
+      const newnmb = parseInt(state.markerNumber.toString().slice(0, state.markerNumber.toString().length-1));
+
+      return {...state, markerNumber: newnmb, sizeFontNumber: state.sizeFontNumber + 7}
 
     case FULL_NUMBER_DISPLAY:
       return state

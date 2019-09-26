@@ -73,7 +73,7 @@ export const NumberDisplay = ({numbersOutput, numbersDecimal}) => {
               <Row size={15}/>
               <Row size={65}>
                 <Decimal numberOfLines={1}>
-                {numbersOutput}
+                {numbersDecimal}
                 </Decimal>
               </Row>
               <Row size={20}/>

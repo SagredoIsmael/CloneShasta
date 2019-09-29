@@ -4,30 +4,27 @@ import Constants from '../utils/constants'
 import { Col, Row, Grid } from "react-native-easy-grid"
 import DisplayNumber from '../redux/containers/display/numberDisplay'
 import OutputDisplay from '../redux/containers/display/outputDisplay'
+import AvatarUser from '../components/header/avatarUser'
+import IconMenuUser from '../components/header/iconMenuUser'
+import TitleUser from '../components/header/titleUser'
 
 const Wrapper = styled.View`
   flex: 1;
   background-color: ${Constants.primaryColor};
 `
 
-const ButtonText = styled.Text`
-	font-size: 15px;
-	color: ${props => props.colorText};
-	text-align: center;
-`;
-
 const Display = () => (
   <Wrapper>
     <Grid>
       <Row size={10}>
         <Col size={25}>
-          <Wrapper backgroundColor="grey"/>
+          <AvatarUser/>
         </Col>
         <Col size={50}>
-          <Wrapper backgroundColor="grey"/>
+          <TitleUser/>
         </Col>
         <Col size={25}>
-          <Wrapper backgroundColor="white"/>
+          <IconMenuUser/>
         </Col>
       </Row>
       <Row size={34}>

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { View, Text } from 'react-native'
 import Constants from '../../utils/constants'
 import {sizeNormalize} from '../../utils/adaptSizes'
 import { Col, Row, Grid } from "react-native-easy-grid"
@@ -44,7 +43,7 @@ export const NumberDisplay = ({numbersOutput, numbersDecimal, sizeFontNumber}) =
             <DefaultWrapper>
               <Row size={10}/>
               <Row size={70}>
-                <Euro sizeFontNumber={sizeFontNumber*0.6} >
+                <Euro sizeFontNumber={sizeFontNumber*0.5} >
                   €
                 </Euro>
               </Row>

@@ -16,13 +16,13 @@ export default (state = initialState, action) => {
 
     case SET_NUMBER_DISPLAY:
       const newNumber = parseInt(state.markerNumber.toString() + action.payload)
-      
-      return {...state, markerNumber: newNumber, sizeFontNumber: state.sizeFontNumber - 7 }
+
+      return {...state, markerNumber: newNumber, sizeFontNumber: state.sizeFontNumber - 8 }
 
     case DELETE_NUMBER_DISPLAY:
-      const newnmb = parseInt(state.markerNumber.toString().slice(0, state.markerNumber.toString().length-1));
+      const newnmb = parseInt(state.markerNumber.toString().slice(0, state.markerNumber.toString().length-1))
 
-      return {...state, markerNumber: newnmb, sizeFontNumber: state.sizeFontNumber + 7}
+      return {...state, markerNumber: newnmb, sizeFontNumber: state.sizeFontNumber + 8}
 
     case FULL_NUMBER_DISPLAY:
       return state
@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
       return {...state, isFirstDecimalActive: true, markerDecimal: '00'}
 
     case EMPTY_NUMBER_DISPLAY:
-      return {...state, markerNumber: 0}
+      return {...state, markerNumber: 0, sizeFontNumber:100}
 
     case SET_DECIMAL_DISPLAY:
       return {...state, markerDecimal: action.payload, isSecondDecimalActive: true}

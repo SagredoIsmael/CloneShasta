@@ -45,5 +45,4 @@ export const TitleUser = ({}) => {
 }
 
 
-
 export default TitleUser

@@ -7,6 +7,7 @@ import OutputDisplay from '../redux/containers/display/outputDisplay'
 import AvatarUser from '../components/header/avatarUser'
 import IconMenuUser from '../components/header/iconMenuUser'
 import TitleUser from '../components/header/titleUser'
+import Footer from '../components/footer/footer'
 
 const Wrapper = styled.View`
   flex: 1;
@@ -75,7 +76,7 @@ const Display = () => (
         </Col>
       </Row>
       <Row size={16}>
-        <Wrapper backgroundColor="grey"/>
+        <Footer/>
       </Row>
     </Grid>
   </Wrapper>

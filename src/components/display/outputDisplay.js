@@ -20,12 +20,14 @@ const Number = styled.Text`
   display: flex;
   font-size: ${props => props.sizeFontNumber ? sizeNormalize(props.sizeFontNumber) : sizeNormalize(40) };
   color: ${props => props.color};
+  marginBottom: ${props => props.marginBottom ? sizeNormalize(props.marginBottom) : 0 };
 `
 
 const Euro = styled.Text`
   display: flex;
   textAlign: right;
   fontWeight: bold;
+  marginBottom: ${sizeNormalize(30)};
   font-size: ${props => props.sizeFontNumber ? sizeNormalize(props.sizeFontNumber) : sizeNormalize(40) };
   color: ${Constants.euroIconColor};
 `
@@ -41,13 +43,9 @@ export const NumberDisplay = ({numbersOutput, numbersDecimal, sizeFontNumber}) =
         <Col size={75}>
           <Wrapper>
             <DefaultWrapper>
-              <Row size={10}/>
-              <Row size={70}>
-                <Euro sizeFontNumber={sizeFontNumber*0.5} >
-                  €
-                </Euro>
-              </Row>
-              <Row size={20}/>
+              <Euro sizeFontNumber={sizeFontNumber*0.5} >
+                €
+              </Euro>
             </DefaultWrapper>
             <DefaultWrapper>
               <Number sizeFontNumber={sizeFontNumber} numberOfLines={1} ellipsizeMode="clip" color={Constants.numberColor}>
@@ -55,13 +53,9 @@ export const NumberDisplay = ({numbersOutput, numbersDecimal, sizeFontNumber}) =
               </Number>
             </DefaultWrapper>
             <DefaultWrapper>
-              <Row size={15}/>
-              <Row size={65}>
-                <Number sizeFontNumber={sizeFontNumber*0.4} numberOfLines={1} ellipsizeMode="clip" color={Constants.euroIconColor}>
-                {numbersDecimal}
-                </Number>
-              </Row>
-              <Row size={20}/>
+              <Number sizeFontNumber={sizeFontNumber*0.4} numberOfLines={1} ellipsizeMode="clip" color={Constants.euroIconColor} marginBottom={30} >
+              {numbersDecimal}
+              </Number>
             </DefaultWrapper>
           </Wrapper>
         </Col>

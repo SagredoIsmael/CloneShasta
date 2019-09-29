@@ -17,12 +17,12 @@ export default (state = initialState, action) => {
     case SET_NUMBER_DISPLAY:
       const newNumber = parseInt(state.markerNumber.toString() + action.payload)
 
-      return {...state, markerNumber: newNumber, sizeFontNumber: state.sizeFontNumber - 9 }
+      return {...state, markerNumber: newNumber, sizeFontNumber: state.sizeFontNumber - 8.5 }
 
     case DELETE_NUMBER_DISPLAY:
       const newnmb = parseInt(state.markerNumber.toString().slice(0, state.markerNumber.toString().length-1))
 
-      return {...state, markerNumber: newnmb, sizeFontNumber: state.sizeFontNumber + 9}
+      return {...state, markerNumber: newnmb, sizeFontNumber: state.sizeFontNumber + 8.5}
 
     case FULL_NUMBER_DISPLAY:
       return state

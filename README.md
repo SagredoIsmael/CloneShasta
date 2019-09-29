@@ -25,7 +25,11 @@ $ npm install
 $ npm start 
 or
 $ expo start 
+```
 
 
 
 Thank you and sorry for any mistakes!
+
+
+Ismael Sagredo.
